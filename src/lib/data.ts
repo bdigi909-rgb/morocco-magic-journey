@@ -410,3 +410,69 @@ export const airportTransports: AirportTransport[] = [
     },
   },
 ];
+
+// ---- Comparateur : location de voiture (affiliation) ----------------------
+//
+// ⚠️ affiliateUrl pointe vers une recherche générique (non-affiliée) sur des
+// comparateurs reconnus au Maroc. Remplace par ton propre lien d'affiliation
+// une fois inscrit à un programme partenaire (ex: RentalCars.com Affiliates,
+// DiscoverCars.com Affiliate Program, ou un accord direct avec une agence
+// locale) — c'est ce lien qui doit porter ton identifiant de commission.
+
+export type CarRentalCategory = {
+  id: string;
+  name: string;
+  examples: string;
+  priceRangeMad: string;
+  priceRangeEur: string;
+  bestFor: string;
+  affiliateUrl: string;
+};
+
+export const carRentalCategories: CarRentalCategory[] = [
+  {
+    id: "economique",
+    name: "Économique",
+    examples: "Dacia Logan, Sandero, Hyundai i10",
+    priceRangeMad: "200 - 350 MAD/jour",
+    priceRangeEur: "≈ 18 - 32 €/jour",
+    bestFor: "Villes, budget serré",
+    affiliateUrl: "https://www.discovercars.com/morocco",
+  },
+  {
+    id: "compacte",
+    name: "Compacte / Berline",
+    examples: "Renault Clio, Peugeot 308, VW Golf",
+    priceRangeMad: "300 - 500 MAD/jour",
+    priceRangeEur: "≈ 28 - 46 €/jour",
+    bestFor: "Trajets entre villes, confort",
+    affiliateUrl: "https://www.discovercars.com/morocco",
+  },
+  {
+    id: "suv",
+    name: "SUV / Crossover",
+    examples: "Dacia Duster, Hyundai Tucson, Kia Sportage",
+    priceRangeMad: "450 - 700 MAD/jour",
+    priceRangeEur: "≈ 42 - 65 €/jour",
+    bestFor: "Routes de montagne, familles",
+    affiliateUrl: "https://www.discovercars.com/morocco",
+  },
+  {
+    id: "4x4",
+    name: "4x4",
+    examples: "Toyota Land Cruiser, Dacia Duster 4x4",
+    priceRangeMad: "550 - 900 MAD/jour",
+    priceRangeEur: "≈ 51 - 83 €/jour",
+    bestFor: "Désert, pistes non goudronnées",
+    affiliateUrl: "https://www.discovercars.com/morocco",
+  },
+  {
+    id: "premium",
+    name: "Premium / Luxe",
+    examples: "Mercedes Classe C, BMW Série 3, Audi A4",
+    priceRangeMad: "800 - 2 500 MAD/jour",
+    priceRangeEur: "≈ 74 - 230 €/jour",
+    bestFor: "Voyage d'affaires, occasion spéciale",
+    affiliateUrl: "https://www.discovercars.com/morocco",
+  },
+];

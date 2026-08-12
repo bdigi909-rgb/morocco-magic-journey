@@ -11,6 +11,7 @@
 import { Route as rootRouteImport } from './routes/__root'
 import { Route as IndexRouteImport } from './routes/index'
 import { Route as CircuitsRouteImport } from './routes/circuits'
+import { Route as ComparateurRouteImport } from './routes/comparateur'
 import { Route as ConfirmationRouteImport } from './routes/confirmation'
 import { Route as ExcursionsRouteImport } from './routes/excursions'
 import { Route as HebergementRouteImport } from './routes/hebergement'
@@ -28,6 +29,11 @@ const IndexRoute = IndexRouteImport.update({
 const CircuitsRoute = CircuitsRouteImport.update({
   id: '/circuits',
   path: '/circuits',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const ComparateurRoute = ComparateurRouteImport.update({
+  id: '/comparateur',
+  path: '/comparateur',
   getParentRoute: () => rootRouteImport,
 } as any)
 const ConfirmationRoute = ConfirmationRouteImport.update({
@@ -75,6 +81,7 @@ const ApiCheckoutStripeWebhookRoute =
 export interface FileRoutesByFullPath {
   '/': typeof IndexRoute
   '/circuits': typeof CircuitsRoute
+  '/comparateur': typeof ComparateurRoute
   '/confirmation': typeof ConfirmationRoute
   '/excursions': typeof ExcursionsRoute
   '/hebergement': typeof HebergementRoute
@@ -87,6 +94,7 @@ export interface FileRoutesByFullPath {
 export interface FileRoutesByTo {
   '/': typeof IndexRoute
   '/circuits': typeof CircuitsRoute
+  '/comparateur': typeof ComparateurRoute
   '/confirmation': typeof ConfirmationRoute
   '/excursions': typeof ExcursionsRoute
   '/hebergement': typeof HebergementRoute
@@ -100,6 +108,7 @@ export interface FileRoutesById {
   __root__: typeof rootRouteImport
   '/': typeof IndexRoute
   '/circuits': typeof CircuitsRoute
+  '/comparateur': typeof ComparateurRoute
   '/confirmation': typeof ConfirmationRoute
   '/excursions': typeof ExcursionsRoute
   '/hebergement': typeof HebergementRoute
@@ -114,6 +123,7 @@ export interface FileRouteTypes {
   fullPaths:
     | '/'
     | '/circuits'
+    | '/comparateur'
     | '/confirmation'
     | '/excursions'
     | '/hebergement'
@@ -126,6 +136,7 @@ export interface FileRouteTypes {
   to:
     | '/'
     | '/circuits'
+    | '/comparateur'
     | '/confirmation'
     | '/excursions'
     | '/hebergement'
@@ -138,6 +149,7 @@ export interface FileRouteTypes {
     | '__root__'
     | '/'
     | '/circuits'
+    | '/comparateur'
     | '/confirmation'
     | '/excursions'
     | '/hebergement'
@@ -151,6 +163,7 @@ export interface FileRouteTypes {
 export interface RootRouteChildren {
   IndexRoute: typeof IndexRoute
   CircuitsRoute: typeof CircuitsRoute
+  ComparateurRoute: typeof ComparateurRoute
   ConfirmationRoute: typeof ConfirmationRoute
   ExcursionsRoute: typeof ExcursionsRoute
   HebergementRoute: typeof HebergementRoute
@@ -175,6 +188,13 @@ declare module '@tanstack/react-router' {
       path: '/circuits'
       fullPath: '/circuits'
       preLoaderRoute: typeof CircuitsRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/comparateur': {
+      id: '/comparateur'
+      path: '/comparateur'
+      fullPath: '/comparateur'
+      preLoaderRoute: typeof ComparateurRouteImport
       parentRoute: typeof rootRouteImport
     }
     '/confirmation': {
@@ -239,6 +259,7 @@ declare module '@tanstack/react-router' {
 const rootRouteChildren: RootRouteChildren = {
   IndexRoute: IndexRoute,
   CircuitsRoute: CircuitsRoute,
+  ComparateurRoute: ComparateurRoute,
   ConfirmationRoute: ConfirmationRoute,
   ExcursionsRoute: ExcursionsRoute,
   HebergementRoute: HebergementRoute,
