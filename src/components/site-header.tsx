@@ -14,6 +14,7 @@ import { t } from "@/lib/i18n";
 import { useTrip, type Currency, type Lang } from "@/lib/trip-store";
 
 const links = [
+  { to: "/transport-aeroport", key: "nav_transport_airport" },
   { to: "/hebergement", key: "nav_stays" },
   { to: "/excursions", key: "nav_excursions" },
   { to: "/circuits", key: "nav_circuits" },

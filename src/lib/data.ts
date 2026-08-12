@@ -2,6 +2,7 @@ import riadImg from "@/assets/riad.jpg";
 import soukImg from "@/assets/souk.jpg";
 import atlasImg from "@/assets/atlas.jpg";
 import desertImg from "@/assets/hero-desert.jpg";
+import ouzoudImg from "@/assets/ouzoud.jpg";
 
 export type Money = number; // EUR base
 
@@ -181,7 +182,7 @@ export const excursions: Excursion[] = [
     rating: 4.7,
     reviews: 410,
     price: 42,
-    image: atlasImg,
+    image: ouzoudImg,
   },
 ];
 
@@ -277,3 +278,135 @@ export const packages = [
 ];
 
 export const heroImage = desertImg;
+
+// ---- Transport aéroport --------------------------------------------------
+
+export type AirportTransport = {
+  id: string;
+  city: string;
+  airportName: string;
+  airportCode: string;
+  distanceKm: number;
+  bus: {
+    line: string;
+    operator: string;
+    priceOneWay: string;
+    priceReturn?: string;
+    duration: string;
+    frequency: string;
+    hours?: string;
+    stops?: string;
+    note?: string;
+  };
+  taxi: {
+    priceRange: string;
+    duration: string;
+    note?: string;
+  };
+};
+
+export const airportTransports: AirportTransport[] = [
+  {
+    id: "rak",
+    city: "Marrakech",
+    airportName: "Aéroport Marrakech-Ménara",
+    airportCode: "RAK",
+    distanceKm: 6,
+    bus: {
+      line: "Ligne 19 (ALSA)",
+      operator: "ALSA",
+      priceOneWay: "30 MAD",
+      priceReturn: "50 MAD (aller-retour, valable 15 jours)",
+      duration: "20-25 min",
+      frequency: "toutes les 20-30 min",
+      hours: "6h - 23h15",
+      stops: "Bab Doukkala, Guéliz, Hivernage, gare ferroviaire, Jemaa el-Fna",
+    },
+    taxi: {
+      priceRange: "≈ 200 MAD (forfait affiché, jour comme nuit)",
+      duration: "15-20 min",
+      note: "Petits taxis au compteur en théorie, mais forfait souvent appliqué pour l'aéroport — négocier ou demander le compteur avant de monter.",
+    },
+  },
+  {
+    id: "cmn",
+    city: "Casablanca",
+    airportName: "Aéroport Mohammed V",
+    airportCode: "CMN",
+    distanceKm: 30,
+    bus: {
+      line: "Train ONCF (recommandé) + bus CTM en alternative",
+      operator: "ONCF / CTM",
+      priceOneWay: "≈ 40-50 MAD (train, 2ᵉ/1ʳᵉ classe)",
+      duration: "35-45 min (train)",
+      frequency: "1 train/heure",
+      hours: "4h50 - 22h50",
+      stops: "Gare souterraine de l'aéroport → Casa Voyageurs / Casa Port",
+      note: "Le train est plus rapide et fiable que le bus sur ce trajet (30 km). Le bus CTM existe mais prend ≈ 1h.",
+    },
+    taxi: {
+      priceRange: "≈ 250-300 MAD (grand taxi)",
+      duration: "35-60 min selon trafic",
+    },
+  },
+  {
+    id: "fez",
+    city: "Fès",
+    airportName: "Aéroport Fès-Saïss",
+    airportCode: "FEZ",
+    distanceKm: 15,
+    bus: {
+      line: "Ligne 16",
+      operator: "City Bus Fès",
+      priceOneWay: "4 MAD",
+      duration: "≈ 40 min",
+      frequency: "toutes les 30-60 min",
+      stops: "Gare ONCF de Fès",
+      note: "Très économique mais peu pratique avec de gros bagages ; peu de passage tard le soir.",
+    },
+    taxi: {
+      priceRange: "120-150 MAD (ville nouvelle) / 150-170 MAD (médina)",
+      duration: "20-25 min",
+    },
+  },
+  {
+    id: "aga",
+    city: "Agadir",
+    airportName: "Aéroport Agadir Al Massira",
+    airportCode: "AGA",
+    distanceKm: 23,
+    bus: {
+      line: "AE Aerobus (ALSA)",
+      operator: "ALSA",
+      priceOneWay: "50 MAD",
+      priceReturn: "80 MAD (aller-retour)",
+      duration: "≈ 50 min",
+      frequency: "toutes les heures",
+      stops: "Zone balnéaire → pôle Vallée des Oiseaux (centre-ville)",
+      note: "Ligne directe dédiée, billetterie disponible dans l'aéroport.",
+    },
+    taxi: {
+      priceRange: "150 MAD (jour) / 200 MAD (après 19h)",
+      duration: "≈ 20-35 min",
+    },
+  },
+  {
+    id: "tng",
+    city: "Tanger",
+    airportName: "Aéroport Tanger-Ibn Battouta",
+    airportCode: "TNG",
+    distanceKm: 12,
+    bus: {
+      line: "Ligne AE Aerobus (ALSA)",
+      operator: "ALSA",
+      priceOneWay: "40 MAD",
+      duration: "≈ 40 min",
+      frequency: "≈ toutes les heures",
+      stops: "Gare ferroviaire, Nejma, Moulay Ismail",
+    },
+    taxi: {
+      priceRange: "≈ 90-110 MAD",
+      duration: "20-25 min",
+    },
+  },
+];

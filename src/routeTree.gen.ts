@@ -16,6 +16,7 @@ import { Route as ExcursionsRouteImport } from './routes/excursions'
 import { Route as HebergementRouteImport } from './routes/hebergement'
 import { Route as MonVoyageRouteImport } from './routes/mon-voyage'
 import { Route as PanierRouteImport } from './routes/panier'
+import { Route as TransportAeroportRouteImport } from './routes/transport-aeroport'
 import { Route as ApiCheckoutCmiCallbackRouteImport } from './routes/api/checkout/cmi-callback'
 import { Route as ApiCheckoutStripeWebhookRouteImport } from './routes/api/checkout/stripe-webhook'
 
@@ -54,6 +55,11 @@ const PanierRoute = PanierRouteImport.update({
   path: '/panier',
   getParentRoute: () => rootRouteImport,
 } as any)
+const TransportAeroportRoute = TransportAeroportRouteImport.update({
+  id: '/transport-aeroport',
+  path: '/transport-aeroport',
+  getParentRoute: () => rootRouteImport,
+} as any)
 const ApiCheckoutCmiCallbackRoute = ApiCheckoutCmiCallbackRouteImport.update({
   id: '/api/checkout/cmi-callback',
   path: '/api/checkout/cmi-callback',
@@ -74,6 +80,7 @@ export interface FileRoutesByFullPath {
   '/hebergement': typeof HebergementRoute
   '/mon-voyage': typeof MonVoyageRoute
   '/panier': typeof PanierRoute
+  '/transport-aeroport': typeof TransportAeroportRoute
   '/api/checkout/cmi-callback': typeof ApiCheckoutCmiCallbackRoute
   '/api/checkout/stripe-webhook': typeof ApiCheckoutStripeWebhookRoute
 }
@@ -85,6 +92,7 @@ export interface FileRoutesByTo {
   '/hebergement': typeof HebergementRoute
   '/mon-voyage': typeof MonVoyageRoute
   '/panier': typeof PanierRoute
+  '/transport-aeroport': typeof TransportAeroportRoute
   '/api/checkout/cmi-callback': typeof ApiCheckoutCmiCallbackRoute
   '/api/checkout/stripe-webhook': typeof ApiCheckoutStripeWebhookRoute
 }
@@ -97,6 +105,7 @@ export interface FileRoutesById {
   '/hebergement': typeof HebergementRoute
   '/mon-voyage': typeof MonVoyageRoute
   '/panier': typeof PanierRoute
+  '/transport-aeroport': typeof TransportAeroportRoute
   '/api/checkout/cmi-callback': typeof ApiCheckoutCmiCallbackRoute
   '/api/checkout/stripe-webhook': typeof ApiCheckoutStripeWebhookRoute
 }
@@ -110,6 +119,7 @@ export interface FileRouteTypes {
     | '/hebergement'
     | '/mon-voyage'
     | '/panier'
+    | '/transport-aeroport'
     | '/api/checkout/cmi-callback'
     | '/api/checkout/stripe-webhook'
   fileRoutesByTo: FileRoutesByTo
@@ -121,6 +131,7 @@ export interface FileRouteTypes {
     | '/hebergement'
     | '/mon-voyage'
     | '/panier'
+    | '/transport-aeroport'
     | '/api/checkout/cmi-callback'
     | '/api/checkout/stripe-webhook'
   id:
@@ -132,6 +143,7 @@ export interface FileRouteTypes {
     | '/hebergement'
     | '/mon-voyage'
     | '/panier'
+    | '/transport-aeroport'
     | '/api/checkout/cmi-callback'
     | '/api/checkout/stripe-webhook'
   fileRoutesById: FileRoutesById
@@ -144,6 +156,7 @@ export interface RootRouteChildren {
   HebergementRoute: typeof HebergementRoute
   MonVoyageRoute: typeof MonVoyageRoute
   PanierRoute: typeof PanierRoute
+  TransportAeroportRoute: typeof TransportAeroportRoute
   ApiCheckoutCmiCallbackRoute: typeof ApiCheckoutCmiCallbackRoute
   ApiCheckoutStripeWebhookRoute: typeof ApiCheckoutStripeWebhookRoute
 }
@@ -199,6 +212,13 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof PanierRouteImport
       parentRoute: typeof rootRouteImport
     }
+    '/transport-aeroport': {
+      id: '/transport-aeroport'
+      path: '/transport-aeroport'
+      fullPath: '/transport-aeroport'
+      preLoaderRoute: typeof TransportAeroportRouteImport
+      parentRoute: typeof rootRouteImport
+    }
     '/api/checkout/cmi-callback': {
       id: '/api/checkout/cmi-callback'
       path: '/api/checkout/cmi-callback'
@@ -224,6 +244,7 @@ const rootRouteChildren: RootRouteChildren = {
   HebergementRoute: HebergementRoute,
   MonVoyageRoute: MonVoyageRoute,
   PanierRoute: PanierRoute,
+  TransportAeroportRoute: TransportAeroportRoute,
   ApiCheckoutCmiCallbackRoute: ApiCheckoutCmiCallbackRoute,
   ApiCheckoutStripeWebhookRoute: ApiCheckoutStripeWebhookRoute,
 }
