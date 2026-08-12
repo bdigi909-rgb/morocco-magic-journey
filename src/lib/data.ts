@@ -413,11 +413,10 @@ export const airportTransports: AirportTransport[] = [
 
 // ---- Comparateur : location de voiture (affiliation) ----------------------
 //
-// ⚠️ affiliateUrl pointe vers une recherche générique (non-affiliée) sur des
-// comparateurs reconnus au Maroc. Remplace par ton propre lien d'affiliation
-// une fois inscrit à un programme partenaire (ex: RentalCars.com Affiliates,
-// DiscoverCars.com Affiliate Program, ou un accord direct avec une agence
-// locale) — c'est ce lien qui doit porter ton identifiant de commission.
+// affiliateUrl utilise le lien d'affiliation DiscoverCars (a_aid=bldigi).
+// Chaque clic sur "Voir les offres" est suivi pendant 365 jours ; commission
+// versée sur toute réservation effectuée dans ce délai (tableau de bord :
+// https://www.discovercars.com/fr/affiliate).
 
 export type CarRentalCategory = {
   id: string;
@@ -437,7 +436,7 @@ export const carRentalCategories: CarRentalCategory[] = [
     priceRangeMad: "200 - 350 MAD/jour",
     priceRangeEur: "≈ 18 - 32 €/jour",
     bestFor: "Villes, budget serré",
-    affiliateUrl: "https://www.discovercars.com/morocco",
+    affiliateUrl: "https://www.discovercars.com/morocco?a_aid=bldigi",
   },
   {
     id: "compacte",
@@ -446,7 +445,7 @@ export const carRentalCategories: CarRentalCategory[] = [
     priceRangeMad: "300 - 500 MAD/jour",
     priceRangeEur: "≈ 28 - 46 €/jour",
     bestFor: "Trajets entre villes, confort",
-    affiliateUrl: "https://www.discovercars.com/morocco",
+    affiliateUrl: "https://www.discovercars.com/morocco?a_aid=bldigi",
   },
   {
     id: "suv",
@@ -455,7 +454,7 @@ export const carRentalCategories: CarRentalCategory[] = [
     priceRangeMad: "450 - 700 MAD/jour",
     priceRangeEur: "≈ 42 - 65 €/jour",
     bestFor: "Routes de montagne, familles",
-    affiliateUrl: "https://www.discovercars.com/morocco",
+    affiliateUrl: "https://www.discovercars.com/morocco?a_aid=bldigi",
   },
   {
     id: "4x4",
@@ -464,7 +463,7 @@ export const carRentalCategories: CarRentalCategory[] = [
     priceRangeMad: "550 - 900 MAD/jour",
     priceRangeEur: "≈ 51 - 83 €/jour",
     bestFor: "Désert, pistes non goudronnées",
-    affiliateUrl: "https://www.discovercars.com/morocco",
+    affiliateUrl: "https://www.discovercars.com/morocco?a_aid=bldigi",
   },
   {
     id: "premium",
@@ -473,7 +472,7 @@ export const carRentalCategories: CarRentalCategory[] = [
     priceRangeMad: "800 - 2 500 MAD/jour",
     priceRangeEur: "≈ 74 - 230 €/jour",
     bestFor: "Voyage d'affaires, occasion spéciale",
-    affiliateUrl: "https://www.discovercars.com/morocco",
+    affiliateUrl: "https://www.discovercars.com/morocco?a_aid=bldigi",
   },
 ];
 
