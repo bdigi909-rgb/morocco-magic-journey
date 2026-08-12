@@ -6,6 +6,7 @@ export const dict: Dict = {
   nav_stays: { fr: "Hébergements", en: "Stays", es: "Alojamientos" },
   nav_transport_airport: { fr: "Aéroport", en: "Airport", es: "Aeropuerto" },
   nav_compare: { fr: "Comparateur", en: "Compare", es: "Comparar" },
+  nav_culture: { fr: "Culture", en: "Culture", es: "Cultura" },
   nav_excursions: { fr: "Excursions", en: "Excursions", es: "Excursiones" },
   nav_circuits: { fr: "Circuits", en: "Trip builder", es: "Circuitos" },
   nav_cart: { fr: "Panier", en: "Cart", es: "Carrito" },

@@ -13,6 +13,7 @@ import { Route as IndexRouteImport } from './routes/index'
 import { Route as CircuitsRouteImport } from './routes/circuits'
 import { Route as ComparateurRouteImport } from './routes/comparateur'
 import { Route as ConfirmationRouteImport } from './routes/confirmation'
+import { Route as CultureRouteImport } from './routes/culture'
 import { Route as ExcursionsRouteImport } from './routes/excursions'
 import { Route as HebergementRouteImport } from './routes/hebergement'
 import { Route as MonVoyageRouteImport } from './routes/mon-voyage'
@@ -39,6 +40,11 @@ const ComparateurRoute = ComparateurRouteImport.update({
 const ConfirmationRoute = ConfirmationRouteImport.update({
   id: '/confirmation',
   path: '/confirmation',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const CultureRoute = CultureRouteImport.update({
+  id: '/culture',
+  path: '/culture',
   getParentRoute: () => rootRouteImport,
 } as any)
 const ExcursionsRoute = ExcursionsRouteImport.update({
@@ -83,6 +89,7 @@ export interface FileRoutesByFullPath {
   '/circuits': typeof CircuitsRoute
   '/comparateur': typeof ComparateurRoute
   '/confirmation': typeof ConfirmationRoute
+  '/culture': typeof CultureRoute
   '/excursions': typeof ExcursionsRoute
   '/hebergement': typeof HebergementRoute
   '/mon-voyage': typeof MonVoyageRoute
@@ -96,6 +103,7 @@ export interface FileRoutesByTo {
   '/circuits': typeof CircuitsRoute
   '/comparateur': typeof ComparateurRoute
   '/confirmation': typeof ConfirmationRoute
+  '/culture': typeof CultureRoute
   '/excursions': typeof ExcursionsRoute
   '/hebergement': typeof HebergementRoute
   '/mon-voyage': typeof MonVoyageRoute
@@ -110,6 +118,7 @@ export interface FileRoutesById {
   '/circuits': typeof CircuitsRoute
   '/comparateur': typeof ComparateurRoute
   '/confirmation': typeof ConfirmationRoute
+  '/culture': typeof CultureRoute
   '/excursions': typeof ExcursionsRoute
   '/hebergement': typeof HebergementRoute
   '/mon-voyage': typeof MonVoyageRoute
@@ -125,6 +134,7 @@ export interface FileRouteTypes {
     | '/circuits'
     | '/comparateur'
     | '/confirmation'
+    | '/culture'
     | '/excursions'
     | '/hebergement'
     | '/mon-voyage'
@@ -138,6 +148,7 @@ export interface FileRouteTypes {
     | '/circuits'
     | '/comparateur'
     | '/confirmation'
+    | '/culture'
     | '/excursions'
     | '/hebergement'
     | '/mon-voyage'
@@ -151,6 +162,7 @@ export interface FileRouteTypes {
     | '/circuits'
     | '/comparateur'
     | '/confirmation'
+    | '/culture'
     | '/excursions'
     | '/hebergement'
     | '/mon-voyage'
@@ -165,6 +177,7 @@ export interface RootRouteChildren {
   CircuitsRoute: typeof CircuitsRoute
   ComparateurRoute: typeof ComparateurRoute
   ConfirmationRoute: typeof ConfirmationRoute
+  CultureRoute: typeof CultureRoute
   ExcursionsRoute: typeof ExcursionsRoute
   HebergementRoute: typeof HebergementRoute
   MonVoyageRoute: typeof MonVoyageRoute
@@ -202,6 +215,13 @@ declare module '@tanstack/react-router' {
       path: '/confirmation'
       fullPath: '/confirmation'
       preLoaderRoute: typeof ConfirmationRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/culture': {
+      id: '/culture'
+      path: '/culture'
+      fullPath: '/culture'
+      preLoaderRoute: typeof CultureRouteImport
       parentRoute: typeof rootRouteImport
     }
     '/excursions': {
@@ -261,6 +281,7 @@ const rootRouteChildren: RootRouteChildren = {
   CircuitsRoute: CircuitsRoute,
   ComparateurRoute: ComparateurRoute,
   ConfirmationRoute: ConfirmationRoute,
+  CultureRoute: CultureRoute,
   ExcursionsRoute: ExcursionsRoute,
   HebergementRoute: HebergementRoute,
   MonVoyageRoute: MonVoyageRoute,

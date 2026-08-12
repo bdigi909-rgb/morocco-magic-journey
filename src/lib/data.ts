@@ -476,3 +476,211 @@ export const carRentalCategories: CarRentalCategory[] = [
     affiliateUrl: "https://www.discovercars.com/morocco",
   },
 ];
+
+// ---- Culture : histoire, monuments, coutumes, musique ----------------------
+
+export type HistoryPeriod = {
+  id: string;
+  period: string;
+  title: string;
+  text: string;
+};
+
+export const historyTimeline: HistoryPeriod[] = [
+  {
+    id: "antiquite",
+    period: "Avant le VIIe siècle",
+    title: "Berbères, Phéniciens et Romains",
+    text: "Le territoire est peuplé de longue date par les Berbères (Amazighs). Phéniciens puis Romains y installent des comptoirs et cités, dont Volubilis, aujourd'hui site archéologique classé près de Meknès.",
+  },
+  {
+    id: "idrissides",
+    period: "789 - XIe siècle",
+    title: "Les Idrissides, premier royaume marocain",
+    text: "Idris Ier fonde le premier État marocain unifié et pose les bases de Fès, qui devient un grand centre religieux et intellectuel du monde musulman.",
+  },
+  {
+    id: "almoravides-almohades",
+    period: "1062 - XIIIe siècle",
+    title: "Almoravides puis Almohades",
+    text: "Youssef Ibn Tachfin fonde Marrakech en 1062. Les Almohades qui leur succèdent unifient un temps le Maroc et l'Espagne musulmane (Al-Andalus), laissant un important héritage architectural.",
+  },
+  {
+    id: "merinides-saadiens",
+    period: "XIIIe - XVIIe siècle",
+    title: "Mérinides puis Saadiens",
+    text: "Les Mérinides font de Fès un âge d'or intellectuel (médersas, université Al Quaraouiyine). Les Saadiens, à Marrakech, laissent notamment les Tombeaux saadiens et le Palais El Badi.",
+  },
+  {
+    id: "alaouites",
+    period: "Depuis 1666",
+    title: "La dynastie alaouite",
+    text: "Toujours au pouvoir aujourd'hui. Sous Moulay Ismaïl, Meknès devient capitale impériale (fin XVIIe). Rabat devient capitale du royaume moderne.",
+  },
+  {
+    id: "protectorat-independance",
+    period: "1912 - 1956",
+    title: "Protectorat puis indépendance",
+    text: "Le Maroc est sous protectorat franco-espagnol de 1912 à 1956, année de son indépendance sous le règne de Mohammed V.",
+  },
+];
+
+export type Monument = {
+  id: string;
+  name: string;
+  city: string;
+  period: string;
+  description: string;
+};
+
+export const monuments: Monument[] = [
+  {
+    id: "koutoubia",
+    name: "Mosquée Koutoubia",
+    city: "Marrakech",
+    period: "XIIe siècle, Almohades",
+    description: "Le minaret le plus emblématique de Marrakech, modèle architectural qui a inspiré la Giralda de Séville. Visible depuis toute la ville.",
+  },
+  {
+    id: "bahia",
+    name: "Palais de la Bahia",
+    city: "Marrakech",
+    period: "Fin XIXe siècle",
+    description: "Vaste palais aux cours et jardins raffinés, exemple d'architecture marocaine traditionnelle avec zelliges et plafonds sculptés.",
+  },
+  {
+    id: "tombeaux-saadiens",
+    name: "Tombeaux saadiens",
+    city: "Marrakech",
+    period: "XVIe siècle, Saadiens",
+    description: "Nécropole royale redécouverte en 1917, connue pour ses mausolées ornés de marbre de Carrare et de zelliges.",
+  },
+  {
+    id: "bou-inania",
+    name: "Médersa Bou Inania",
+    city: "Fès",
+    period: "XIVe siècle, Mérinides",
+    description: "Chef-d'œuvre de l'architecture mérinide : zelliges, bois sculpté et calligraphie. L'une des rares médersas encore accessibles aux visiteurs non-musulmans.",
+  },
+  {
+    id: "quaraouiyine",
+    name: "Université Al Quaraouiyine",
+    city: "Fès",
+    period: "859, fondée par Fatima al-Fihriya",
+    description: "Considérée comme l'une des plus anciennes universités toujours en activité au monde, fondée par une femme.",
+  },
+  {
+    id: "bab-mansour",
+    name: "Bab Mansour",
+    city: "Meknès",
+    period: "Début XVIIIe siècle",
+    description: "Monumentale porte de la ville impériale voulue par le sultan Moulay Ismaïl, ornée de zelliges verts et de colonnes antiques récupérées à Volubilis.",
+  },
+  {
+    id: "volubilis",
+    name: "Site archéologique de Volubilis",
+    city: "près de Meknès",
+    period: "Antiquité romaine",
+    description: "Cité romaine la mieux conservée du Maroc, classée UNESCO, connue pour ses mosaïques encore en place.",
+  },
+  {
+    id: "hassan",
+    name: "Tour Hassan",
+    city: "Rabat",
+    period: "XIIe siècle, Almohades",
+    description: "Minaret inachevé d'une mosquée jamais terminée, aujourd'hui aux côtés du mausolée Mohammed V, symbole de Rabat.",
+  },
+  {
+    id: "oudayas",
+    name: "Kasbah des Oudayas",
+    city: "Rabat",
+    period: "XIIe siècle",
+    description: "Citadelle fortifiée dominant l'embouchure du Bouregreg, avec ses ruelles bleu et blanc et son jardin andalou.",
+  },
+];
+
+export type CustomTip = {
+  id: string;
+  title: string;
+  text: string;
+};
+
+export const customTips: CustomTip[] = [
+  {
+    id: "tenue",
+    title: "Tenue vestimentaire",
+    text: "Une tenue couvrant épaules et genoux est appréciée, surtout hors des zones balnéaires et dans les lieux religieux — par respect plus que par obligation stricte.",
+  },
+  {
+    id: "mosquees",
+    title: "Accès aux mosquées",
+    text: "La plupart des mosquées marocaines sont réservées aux musulmans. La grande mosquée Hassan II de Casablanca fait exception et propose des visites guidées pour tous.",
+  },
+  {
+    id: "the",
+    title: "Le thé à la menthe",
+    text: "Boisson de l'hospitalité par excellence, offerte en signe de bienvenue. Le refuser peut être perçu comme discourtois — même une petite gorgée est appréciée.",
+  },
+  {
+    id: "marchandage",
+    title: "Marchandage dans les souks",
+    text: "Le marchandage est une pratique courante et attendue dans les souks (contrairement aux boutiques à prix fixe). Il se fait dans la bonne humeur, sans agressivité.",
+  },
+  {
+    id: "photos",
+    title: "Photographier les gens",
+    text: "Il est de coutume de demander l'autorisation avant de photographier une personne, en particulier dans la médina.",
+  },
+  {
+    id: "ramadan",
+    title: "Voyager pendant le Ramadan",
+    text: "Manger, boire ou fumer en public dans la journée est déconseillé pendant le mois sacré. Restaurants et cafés touristiques adaptent généralement leurs horaires.",
+  },
+  {
+    id: "main-droite",
+    title: "Main droite",
+    text: "La main droite est utilisée pour manger, saluer et échanger des objets — la main gauche est traditionnellement considérée comme impure dans ce contexte.",
+  },
+];
+
+export type MusicGenre = {
+  id: string;
+  name: string;
+  origin: string;
+  description: string;
+  instruments: string;
+  festival?: string;
+};
+
+export const musicGenres: MusicGenre[] = [
+  {
+    id: "gnaoua",
+    name: "Gnaoua",
+    origin: "Héritage subsaharien",
+    description: "Musique spirituelle et rituelle liée à des cérémonies de transe (lila), portée par les confréries gnaouies descendantes d'Afrique subsaharienne.",
+    instruments: "Guembri (luth-basse), qraqeb (crotales en métal)",
+    festival: "Festival Gnaoua & Musiques du Monde, Essaouira (juin)",
+  },
+  {
+    id: "andalou",
+    name: "Musique andalouse",
+    origin: "Héritage d'Al-Andalus",
+    description: "Musique classique savante héritée de l'Espagne musulmane, jouée par de grands orchestres dans les villes du nord (Fès, Tétouan, Rabat).",
+    instruments: "Oud, rebab, kanoun, percussions",
+  },
+  {
+    id: "chaabi",
+    name: "Chaâbi",
+    origin: "Plaines atlantiques",
+    description: "Musique populaire par excellence, présente dans les fêtes et mariages, aux mélodies entraînantes et paroles proches du quotidien.",
+    instruments: "Oud, violon, derbouka",
+  },
+  {
+    id: "amazigh",
+    name: "Musique amazighe (berbère)",
+    origin: "Atlas, Souss, Rif",
+    description: "Chants et danses collectifs propres à chaque région berbère, comme l'ahidous du Moyen Atlas ou l'ahwash du Souss.",
+    instruments: "Bendir, flûtes, chant choral",
+    festival: "Festival Timitar, Agadir (été)",
+  },
+];
